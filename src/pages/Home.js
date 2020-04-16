@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Nav from '../components/Nav/Nav';
 import Landing from './Landing';
 import {Element, scroller} from 'react-scroll';

@@ -101,22 +101,30 @@ body {
   z-index: 5;
 }
 .header .logo__image {
-  margin: 0 auto;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   width: 25%;
   filter: invert(80%);
   -webkit-filter: invert(80%);
   opacity: 0.6;
+  flex-shrink: initial;
 }
 .header .logo__title {
-  position: absolute;
-  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: -200px;
   color: #dadada;
   font-family: "rust";
   text-shadow: #fff 2px 0 1px;
-  font-size: 5rem;
+  font-size: 4.5rem;
+  flex-shrink: initial;
   z-index: 1;
+}
+@media only screen and (max-width: 1370px) {
+  .header .logo__title {
+    font-size: 3rem;
+  }
 }
 @media only screen and (max-width: 1370px) {
   .header .logo__logo-link {
@@ -128,7 +136,7 @@ body {
 }
 .home__header {
   height: 100vh;
-  background: #0e1417 url("./assets/images/main.png") 0 top no-repeat;
+  background: #0e1417 url("./assets/img/main.png") 0 top no-repeat;
   padding-top: 160px;
   background-size: cover;
 }
@@ -157,7 +165,7 @@ body {
 .footer {
   width: 100%;
   min-height: 350px;
-  background: #0e1417 url("./assets/images/main.png") 0 top no-repeat 0 bottom;
+  background: #0e1417 url("./assets/img/main.png") 0 top no-repeat 0 bottom;
   background-size: contain;
   padding: 45px 0 40px;
   box-sizing: border-box;
@@ -181,9 +189,7 @@ body {
     order: 2;
   }
 }
-.social-icons,
-.socials__github,
-.socials__linkedin {
+.social-icons {
   width: 33px;
   height: 33px;
   margin-right: 20px;
@@ -191,9 +197,50 @@ body {
 .socials {
   display: flex;
 }
-.socials__github {
-  background: url("./assets/images/Github.svg") center no-repeat;
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
 }
-.socials__linkedin {
-  background: url("./assets/images/linkedin.svg") center no-repeat;
+@media only screen and (max-width: 1370px) {
+  .project {
+    justify-content: center;
+  }
+}
+.project__caption {
+  flex-grow: 1;
+  flex-basis: 100%;
+  display: flex;
+}
+.project__caption h1 {
+  width: 400px;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 1370px) {
+  .project__caption h1 {
+    white-space: normal;
+    width: auto;
+    font-family: "rust";
+    font-size: 34px;
+  }
+}
+.project__thumbnail {
+  width: 100%;
+  max-width: 500px;
+  background-position: center;
+  box-sizing: border-box;
+  border: 10px solid #fff;
+  border-radius: 15px;
+  margin-right: 50px;
+  align-self: flex-start;
+}
+@media only screen and (max-width: 1370px) {
+  .project__thumbnail {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+.project__button {
+  font-size: 27px;
+  margin-bottom: 20px;
 }

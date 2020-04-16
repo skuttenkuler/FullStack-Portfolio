@@ -6,7 +6,7 @@ const About = () => {
         <div className="about">
             <Fade left delay={80} duration={900}>
                     <div className="about__section">
-                        <img className="about__image" src={require("../../assets/images/headshot.png")} alt="headshot" />
+                        <img className="about__image" src={require("../../assets/img/headshot.png")} alt="headshot" />
                         <h1 className="about__title">Full Stack Engineer</h1>
                         <p className="about__text"> Full Stack Web Developer with a Bachelor’s in Music that brings a 
                                                     strong creative approach to not only the front end design but problem 

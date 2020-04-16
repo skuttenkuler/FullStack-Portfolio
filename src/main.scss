@@ -10,7 +10,7 @@
 $main-background-color: #070707;
 $main-font-color: #fff;
 $header-background: #0e1417;
-$main-image: $header-background url('./assets/images/main.png') 0 top no-repeat ;
+$main-image: $header-background url('./assets/img/main.png') 0 top no-repeat ;
 
 
 //dynamic sizing
@@ -119,22 +119,28 @@ html, body {
 
     .logo {
         &__image{
-            margin: 0 auto;
             display: flex;
             justify-content: center;
+            margin: 0 auto;
             width: 25%;
             filter:invert(80%);
             -webkit-filter: invert(80%);
             opacity: 0.6;
+            flex-shrink: initial;
         }
         &__title{
-            position: absolute;
-            margin-top: 150px;
+            display: flex;
+            justify-content: center;
+            margin-top: -200px;
             color: #dadada;
             font-family: 'rust';
             text-shadow: #fff 2px 0 1px;
-            font-size: 5rem;
+            font-size:4.5rem;
+            flex-shrink: initial;
             z-index: 1;
+            @media #{$lg} {
+                font-size: 3rem;
+            }
         }
         
         &__logo-link {
@@ -217,13 +223,52 @@ html, body {
 
 .socials {
     display: flex;
+}
 
-    &__github {
-        @extend .social-icons;
-        background: url('./assets/images/Github.svg') center no-repeat;
+.project { 
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    @media #{$md} {
+        justify-content: center;
     }
-    &__linkedin {
-        @extend .social-icons;
-        background: url('./assets/images/linkedin.svg') center no-repeat;
+
+    &__caption{
+        flex-grow: 1;
+        flex-basis: 100%;
+        display: flex;
+
+        h1 {
+            width: 400px;
+            white-space: nowrap;
+
+            @media #{$md} {
+                white-space: normal;
+                width: auto;
+                font-family: 'rust';
+                font-size: 34px;
+            }
+        }
+    }
+    &__thumbnail{
+        width: 100%;
+        max-width: 500px;
+        background-position: center;
+        box-sizing: border-box;
+        border: 10px solid #fff;
+        border-radius: 15px;
+        margin-right: 50px;
+        align-self: flex-start;
+
+        @media #{$md} {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    &__button {
+       
+        font-size: 27px;
+        margin-bottom: 20px;
     }
 }

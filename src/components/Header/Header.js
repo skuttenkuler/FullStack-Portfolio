@@ -14,7 +14,7 @@ class Header extends Component {
             <header className="header">
                 <div className="wrapper wrapper-header">
                         <Link className="header__logo-link" to="/">
-                            <img className="logo__image" src={require('../../assets/images/Circle.png')} alt="logo"/>
+                            <img className="logo__image" src={require('../../assets/img/Circle.png')} alt="logo"/>
                         </Link>
                             <h1 className="logo__title">Sam Kuttenkuler</h1>
                     <Nav context="header"/>
