@@ -21,7 +21,7 @@ const Home = () => {
                     <div className="home__caption" onClick={() => scroll('landing')}>
                         About Me
                     </div>
-                    <div className="home_scroll-down"></div>
+                    <div className="home__scroll"></div>
                 </div>
             </div>
             <Element name="landing">

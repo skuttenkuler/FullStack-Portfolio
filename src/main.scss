@@ -11,7 +11,7 @@ $main-background-color: #070707;
 $main-font-color: #fff;
 $header-background: #0e1417;
 $main-image: $header-background url('./assets/img/main.png') 0 top no-repeat ;
-
+$button-color: #395464;
 
 //dynamic sizing
 $lg: "only screen and (max-width : 1370px)";
@@ -25,6 +25,25 @@ html, body, #root {
     border: none;
     font-family: 'rust';
     color: $main-font-color;
+}
+
+//hover effect 
+@keyframes hovering {
+    0% {
+        tranform: translateY(0);
+    }
+    20% {
+        transform: translateY(3px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 html, body {
@@ -165,7 +184,34 @@ html, body {
             background-position: 0 0;
         }
     }
+    &__caption {
+        font-size: 50px;
+        color: rgba(255,255,255,0.8);
+        margin-top: 50px;
+        transition: all .3s ease;
+        cursor: pointer;
+
+        @media #{$sm} {
+            font-size: 34px; 
+        }
+
+        &:hover {
+            color:#fff;
+        }
+    }
+    
+    &__scroll {
+        width: 25px;
+        height: 70px;
+        background: url('./assets/img/scroll.png') no-repeat;
+        margin-top: 65px;
+        filter:invert(100%);
+        -webkit-filter: invert(80%);
+        animation: hovering 1s ease-in-out infinite; 
+        z-index: 1;       
+    }
 }
+
 
 .about{
     max-width: 1088px;
@@ -187,11 +233,24 @@ html, body {
 
 }
 
+.projects {
+    position: absolute;
+    left: 120px;
+    font-family: 'rust';
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+hr {
+    width: 80%;
+    background-color:white;
+    height: 3px;
+}
+
 
 .footer {
     width: 100%;
     min-height: 350px;
-    background: $main-image 0 bottom;
+    background: $main-image 0 top;
     background-size: contain;
     padding: 45px 0 40px;
     box-sizing: border-box;
@@ -210,10 +269,54 @@ html, body {
         @media #{$lg} {
             margin-bottom: 40px;
             align-items: center;
-            order:2;
+            order:1;
+        }
+    }
+    &__contact {
+        width: 40%;
+        min-width: 340px;
+
+        @media #{$lg} {
+            margin-bottom: 40px;
+            order: 2;
         }
     }
 
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+
+    @media #{$md} {
+        align-items: center;
+    }
+    input[type=text], select {
+        width: 400px;
+        margin-bottom: 15px;
+
+        @media #{$lg} {
+            width: 100%;
+        }
+    }
+    
+}
+.prim-button{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background: $button-color;
+    border: none;
+    color: #fff;
+    font-family: 'rust';
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+        background: lighten($color: $button-color, $amount: 10);
+    }
 }
 .social-icons {
     width: 33px;
@@ -228,7 +331,9 @@ html, body {
 .project { 
     display: flex;
     flex-wrap: wrap;
+    margin-top:50px;
     margin-bottom: 60px;
+    
 
     @media #{$md} {
         justify-content: center;
