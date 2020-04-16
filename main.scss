@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'rust';
+    src: url('../../assets/fonts/rustico-regular.woff2') format('woff2'),
+         url('../../assets/fonts/rustico-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+//constants
+$main-background-color: #0e1417;
+$main-font-color: #fff;
+ 
+
+
+//dynamic sizing
+$lg: "only screen and (max-width : 1370px)";
+$md: "only screen and (max-width : 1370px)";
+$sm: "only screen and (max-width : 1370px)";
+
+//app
+html, body, #root {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: 'rust';
+    color: $main-font-color;
+}
+
+html, body {
+    height: 100%
+}
+
+#root {
+    background: $main-background-color;
+    min-height: 100%;
+}

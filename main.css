@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "rust";
+  src: url("../../assets/fonts/rustico-regular.woff2") format("woff2"),
+    url("../../assets/fonts/rustico-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: "rust";
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+}
+#root {
+  background: #0e1417;
+  min-height: 100%;
+}
