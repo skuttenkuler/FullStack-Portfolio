@@ -13,10 +13,10 @@ class Header extends Component {
         return(
             <header className="header">
                 <div className="wrapper wrapper-header">
-                    {/* logo link */}
-                    <Link className="header__logo-link" to="/">
-                        <div className="logo"></div>
-                    </Link>
+                        <Link className="header__logo-link" to="/">
+                            <img className="logo__image" src={require('../../assets/images/Circle.png')} alt="logo"/>
+                        </Link>
+                            <h1 className="logo__title">Sam Kuttenkuler</h1>
                     <Nav context="header"/>
                     <div className="header__menu" onClick={"showsidebar"}></div>
                     {/* Sidebar */}

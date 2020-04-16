@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Nav from '../components/Nav/Nav';
 import Landing from './Landing';
 import {Element, scroller} from 'react-scroll';
@@ -6,8 +7,8 @@ import {Element, scroller} from 'react-scroll';
 
 const Home = () => {
 
-    const scroll = el => {
-        scroller.scrollTo(el, {
+    const scroll = element => {
+        scroller.scrollTo(element, {
             duration:700,
             delay:100,
             smooth: true,
@@ -15,9 +16,8 @@ const Home = () => {
     }
     return (
         <div className="home">
-            <div className="home-header">
+            <div className="home__header">
                 <div className="wrapper">
-                    <div className="logo"></div>
                     <Nav context="home"/>
                     <div className="home__caption" onClick={() => scroll('landing')}>
                         About Me
