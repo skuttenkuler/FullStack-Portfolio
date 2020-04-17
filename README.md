@@ -2,7 +2,7 @@
 Personal portfolio built with React.
 
 # Deployed Link
-[samkuttenkuler.com](www.samkuttenkuler.com)
+[samkuttenkuler.com](http://www.samkuttenkuler.com/)
 
 
 # Visual
