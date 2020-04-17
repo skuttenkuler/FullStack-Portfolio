@@ -10,7 +10,7 @@ const App = () => (
     <Router>
       <div>
         <Header/>
-        <Route path="/" render={ props => (props.location.pathname !== '/') && <Header/>}></Route>
+        <Route  path="/" render={ props => (props.location.pathname === '/') && <Header/>}></Route>
         <Route exact path="/" component={Home}/>
         <Footer/>
       </div>
