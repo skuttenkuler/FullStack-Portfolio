@@ -279,6 +279,10 @@ h3{
         @media #{$lg} {
             width: 20%;
         }
+        @media #{$sm} {
+            position: absolute;
+            width: 150px;
+        }
     }
 }
 
@@ -289,16 +293,28 @@ h3{
     &__image{
         margin-top: 100px;
         width: 50%;
+        @media #{$sm} {
+            width: 300px;
+        }
     }
     &__title {
         margin-top: -200px;
         font-family: 'rust';
         font-size: 6rem;
         color: $main-font-color;
+        @media #{$sm} {
+            position: absolute;
+            margin-top:  -45px;
+            font-size: $header-size-md;
+        }
     }
     &__text {
         font-family: 'Inknut Antiqua', serif;
         font-size: 1.75rem;
+        @media #{$sm} {
+          
+            font-size: 20px;
+        }
     }
 
 }
@@ -371,6 +387,7 @@ h3{
         display:flex;
         flex-direction: column;
         min-width: 340px;
+        margin-right:10px;
 
 
         @media #{$lg} {
@@ -379,6 +396,7 @@ h3{
             align-items: center;
             order:1;
         }
+
     }
     &__contact {
         width: 40%;
@@ -388,8 +406,30 @@ h3{
             margin-bottom: 40px;
             order: 2;
         }
+        
     }
 
+}
+.socials{
+    >a {
+        margin-right: 18px;
+    }
+    @media #{$sm} {
+            position: absolute;
+            margin-top: -80px;
+            margin-left: -90px;
+        >a{
+            margin-right: 18px;
+        }
+    }
+
+}
+.contact-head{
+    @media #{$sm} {
+            position: absolute;
+            margin-left: -90px;
+            margin-top: -40px;
+    }
 }
 .contact {
     display: flex;
@@ -398,6 +438,10 @@ h3{
 
     @media #{$md} {
         align-items: center;
+    }
+    @media #{$sm} {
+        position: absolute;
+        margin-left: -90px;
     }
     input[type=text], select {
         width: 400px;

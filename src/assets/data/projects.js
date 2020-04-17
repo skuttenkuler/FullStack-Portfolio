@@ -49,7 +49,7 @@ export const projects = [
     },
     {
         id: 7,
-        title: 'Google Book Store',
+        title: 'Book Store',
         deployed: '//still-earth-60188.herokuapp.com/',
         code: '//github.com/skuttenkuler/Book-Store',
         thumbnail: '/images/books.png',
