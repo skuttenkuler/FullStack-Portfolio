@@ -6,7 +6,7 @@ import {Fade} from 'react-reveal';
 
 const Portfolio = () => {
     return (
-        <div className="wrapper">
+        <div id="portfolio" className="wrapper">
             <Fade right delay={80} duration={900}>
             <h1 className="projects">Portfolio</h1>
             <hr className="line"/>

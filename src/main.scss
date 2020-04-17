@@ -142,7 +142,9 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    justify-items: center;
     margin-top: 50px;
+    margin-left: 220px;
     font-size: 1.75rem;
     flex-grow: 1;
     
@@ -157,7 +159,8 @@ h3{
         font-size: 20px;
         margin-top: 25px;
         justify-content: flex-start;
-
+        text-decoration: none;
+        list-style: none;
         // when window size smaller no navbar
         @media #{$md} {
             display: none;

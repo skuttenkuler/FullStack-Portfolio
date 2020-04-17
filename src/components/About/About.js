@@ -3,7 +3,7 @@ import { Fade } from 'react-reveal'
 
 const About = () => {
     return (
-        <div className="about">
+        <div className="about" id="about">
             <Fade left delay={80} duration={900}>
                     <div className="about__section">
                         <img className="about__image" src={require("../../assets/img/headshot.png")} alt="headshot" />

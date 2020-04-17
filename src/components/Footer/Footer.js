@@ -4,7 +4,7 @@ import Contact from '../Contact/Contact';
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer id="contact" className="footer">
             <div className="wrapper wrapper-footer">
                 <div className="footer__contact">
                     <h3 className="contact-head">Get in Contact!</h3>
