@@ -15,6 +15,7 @@ const Home = () => {
     }
     return (
         <div className="home">
+            <Fade>
             <div className="home__header">
                 <div className="wrapper">
                     <img className="scroller" src={require('../assets/img/scroll.png')} alt="scroller"></img>
@@ -25,6 +26,7 @@ const Home = () => {
                             </Fade>
                         </div>
                 </div>
+                </Fade>
                     <Element name="landing">
                         <Landing/>
                     </Element>
