@@ -13,11 +13,9 @@ const About = () => {
                                                     solving as well. Recently procuring certifications from Stanford University 
                                                     in Machine Learning as well as a certificate in Full Stack Web Development 
                                                     from UC Berkeley. I utilize my creativity and knowledge of a variety of tools 
-                                                    such as React, Django, AWS, Python, and Javascript to build incredibly dynamic 
-                                                    and interactive applications whether built for web or on mobile.  
-                                                    Applying my three years experience of self-starting freelancing building and 
-                                                    deploying web and mobile applications for a variety of clients and new education from 
-                                                    Berkeley to build the best experiences on all platforms. 
+                                                    such as React, Django, AWS, Python, and Javascript to build dynamic 
+                                                    and engaging applications for web and mobile.  
+                                    
                                                 </p>
 
                     </div>

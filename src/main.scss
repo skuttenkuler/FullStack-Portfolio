@@ -11,12 +11,15 @@ $main-background-color: #070707;
 $main-font-color: #fff;
 $header-background: #0e1417;
 $main-image: $header-background url('./assets/img/main.png') 0 top no-repeat ;
+$main-image-flipped: url('./assets/img/flipped-main.jpeg') 0 bottom no-repeat ;
 $button-color: #395464;
-
+$header-size-lg: 50px;
+$header-size-md: 34px;
+$header-size-sm: 27px;
 //dynamic sizing
 $lg: "only screen and (max-width : 1370px)";
-$md: "only screen and (max-width : 1370px)";
-$sm: "only screen and (max-width : 1370px)";
+$md: "only screen and (max-width : 768px)";
+$sm: "(max-width : 430px)";
 
 //app
 html, body, #root {
@@ -25,6 +28,34 @@ html, body, #root {
     border: none;
     font-family: 'rust';
     color: $main-font-color;
+}
+a {
+    text-decoration: none;
+    transition: all .2s ease;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        background: transparent;
+        text-decoration: none;
+        position: absolute;
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        transition: all .2s ease;
+    }
+
+    &:hover {
+        color:#66aebd;
+        text-decoration: none;
+
+        &::after {
+            background: #36b0c9;
+            text-decoration: none;
+        }
+    }
 }
 
 //hover effect 
@@ -53,6 +84,23 @@ html, body {
 #root {
     background: $main-background-color;
     min-height: 100%;
+}
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+h1{
+    font-size: $header-size-lg;
+    margin-bottom: 20px;
+
+    @media #{$sm}{
+        font-size: $header-size-md;
+    }
+}
+h3{
+    font-size: $header-size-sm;
 }
 
 //wrapper 
@@ -92,15 +140,16 @@ html, body {
 
 .main-nav {
     display: flex;
-    width: 70%;
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 50px;
+    font-size: 1.75rem;
     flex-grow: 1;
     
     @media #{$md} {
         flex-direction: column;
         align-items: center;
+        width: 80%;
         justify-content: flex-start;
     }
 
@@ -115,8 +164,16 @@ html, body {
         }
 
         >a {
-           margin-right: 90px; 
+           margin-right: 200px;
+           color: $main-font-color; 
+           text-decoration: none;
         }
+    }
+}
+.resume{
+    >a{
+        color: $main-font-color; 
+        text-decoration: none;
     }
 }
 
@@ -132,11 +189,12 @@ html, body {
 
 .header {
   
-    height: 250px;
+    height: 0px;
     position: relative;
     z-index: 5;
 
     .logo {
+        text-decoration: none;
         &__image{
             display: flex;
             justify-content: center;
@@ -146,11 +204,18 @@ html, body {
             -webkit-filter: invert(80%);
             opacity: 0.6;
             flex-shrink: initial;
+            @media #{$lg} {
+                
+            }
+            @media #{$sm} {
+                position: absolute;
+                top: 130px;
+            }
         }
         &__title{
             display: flex;
             justify-content: center;
-            margin-top: -200px;
+            margin-top: -250px;
             color: #dadada;
             font-family: 'rust';
             text-shadow: #fff 2px 0 1px;
@@ -160,39 +225,41 @@ html, body {
             @media #{$lg} {
                 font-size: 3rem;
             }
-        }
-        
-        &__logo-link {
-            @media #{$md} {
-                flex-grow: 1;
-            }
-            &::after {
-                display: none;
+            @media #{$sm} {
+                position: absolute;
+                top: 450px;
             }
             
         }
+        
+        
     }
 }
 .home {
     &__header{
-        height: 100vh;
+        height: 110vh;
+        width:98vw;
+        top: 0;
         background: $main-image;
-        padding-top: 160px;
         background-size:cover;
 
         @media #{$sm}{
-            background-position: 0 0;
+            height: 100vh;
+            width: 100vw;
+            background-position-x: center;
+            
         }
     }
     &__caption {
         font-size: 50px;
         color: rgba(255,255,255,0.8);
-        margin-top: 50px;
+        margin-bottom: -150px;
         transition: all .3s ease;
         cursor: pointer;
 
         @media #{$sm} {
-            font-size: 34px; 
+            font-size: 34px;
+             
         }
 
         &:hover {
@@ -200,15 +267,18 @@ html, body {
         }
     }
     
-    &__scroll {
-        width: 25px;
-        height: 70px;
-        background: url('./assets/img/scroll.png') no-repeat;
-        margin-top: 65px;
+   
+    .scroller{
+        position: relative;
+        justify-content: center;
+        margin-top:600px;
+        width:20%;
         filter:invert(100%);
         -webkit-filter: invert(80%);
         animation: hovering 1s ease-in-out infinite; 
-        z-index: 1;       
+        @media #{$lg} {
+            width: 20%;
+        }
     }
 }
 
@@ -217,7 +287,7 @@ html, body {
     max-width: 1088px;
 
     &__image{
-        margin-bottom: 20px;
+        margin-top: 100px;
         width: 50%;
     }
     &__title {
@@ -233,31 +303,67 @@ html, body {
 
 }
 
+.divide_line{
+    width: 70%;
+    background-color:white;
+    height: 3px;
+    margin-top:135px;
+    @media #{$sm} {
+        position: absolute;
+        top: 810px;
+      
+    }
+}
+.about_divide{
+    position: absolute;
+    margin-top:835px;
+    left: 120px;
+    font-family: 'rust';
+    font-size: 3rem;
+    margin-bottom: 50px;
+    margin-left: -25px;
+
+    @media #{$sm} {
+        position: absolute;
+        margin-right: 20px;
+    }
+}
 .projects {
     position: absolute;
     left: 120px;
     font-family: 'rust';
     font-size: 3rem;
     margin-bottom: 50px;
+    margin-left: -25px
 }
-hr {
+.line {
     width: 80%;
     background-color:white;
     height: 3px;
+    
+    
+
+    @media #{$sm} {
+        margin-top: 60px;
+      
+    }
 }
 
 
 .footer {
-    width: 100%;
+    width: 100vw;
     min-height: 350px;
-    background: $main-image 0 top;
-    background-size: contain;
+    background: $main-image-flipped ;
+    background-size: cover;
     padding: 45px 0 40px;
     box-sizing: border-box;
-    background-position: top;
+    background-position-y: unset;
 
-    @media #{$md} {
-        background: $header-background;
+    @media #{$sm} {
+        background:$main-image-flipped;
+        background-size: cover;
+        background-position-y: unset;
+        opacity:9.9;
     }
 
     &__links {
@@ -266,8 +372,10 @@ hr {
         flex-direction: column;
         min-width: 340px;
 
+
         @media #{$lg} {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            margin-right: 230px;
             align-items: center;
             order:1;
         }
@@ -286,6 +394,7 @@ hr {
 .contact {
     display: flex;
     flex-direction: column;
+    
 
     @media #{$md} {
         align-items: center;
@@ -334,9 +443,13 @@ hr {
     margin-top:50px;
     margin-bottom: 60px;
     
+    >a {
+        text-decoration: none;
+    }
 
     @media #{$md} {
         justify-content: center;
+        
     }
 
     &__caption{
@@ -365,15 +478,21 @@ hr {
         border-radius: 15px;
         margin-right: 50px;
         align-self: flex-start;
-
+        text-decoration: none;
+        
         @media #{$md} {
             margin-right: 0;
             margin-bottom: 20px;
+            text-decoration: none;
         }
     }
     &__button {
        
         font-size: 27px;
         margin-bottom: 20px;
+        background: none;
+        border: none;
+        text-decoration: none;
     }
+    
 }

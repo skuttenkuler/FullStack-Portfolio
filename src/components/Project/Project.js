@@ -6,16 +6,18 @@ const Project = ({  id,
                     title,
                     deployed,
                     code,
+                    description,
                     thumbnail }) => {
     return (
-        <Fade left delay={id*80} duration={900}>
+        <Fade right delay={id*80} duration={900}>
             <div className="project">
-                <img src={thumbnail} href={deployed} className="project__thumbnail" alt="thumbnail"/>
+                <a href={deployed}><img src={thumbnail} className="project__thumbnail" alt="thumbnail"/></a>
                 <div className="project__caption">
                    <h1>{title}</h1> 
                    <button className="project__button"><a href={code}>Github</a></button>
                 </div>
             </div>
+                
         </Fade>
     )
 }

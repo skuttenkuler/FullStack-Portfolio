@@ -14,6 +14,28 @@ body,
   font-family: "rust";
   color: #fff;
 }
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+  position: relative;
+}
+a::after {
+  content: "";
+  background: transparent;
+  position: absolute;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: #66aebd;
+}
+a:hover::after {
+  background: #36b0c9;
+}
 @keyframes hovering {
   0% {
     tranform: translateY(0);
@@ -113,9 +135,12 @@ body {
   z-index: 1;
 }
 .header {
-  height: 250px;
+  height: 0px;
   position: relative;
   z-index: 5;
+}
+.header .logo {
+  text-decoration: none;
 }
 .header .logo__image {
   display: flex;
@@ -130,7 +155,7 @@ body {
 .header .logo__title {
   display: flex;
   justify-content: center;
-  margin-top: -200px;
+  margin-top: -250px;
   color: #dadada;
   font-family: "rust";
   text-shadow: #fff 2px 0 1px;
@@ -143,18 +168,10 @@ body {
     font-size: 3rem;
   }
 }
-@media only screen and (max-width: 1370px) {
-  .header .logo__logo-link {
-    flex-grow: 1;
-  }
-}
-.header .logo__logo-link::after {
-  display: none;
-}
 .home__header {
-  height: 100vh;
+  height: 150vh;
+  top: 0;
   background: #0e1417 url("./assets/img/main.png") 0 top no-repeat;
-  padding-top: 160px;
   background-size: cover;
 }
 @media only screen and (max-width: 1370px) {
@@ -165,7 +182,7 @@ body {
 .home__caption {
   font-size: 50px;
   color: rgba(255, 255, 255, 0.8);
-  margin-top: 50px;
+  margin-bottom: -200px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
