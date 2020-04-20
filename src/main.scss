@@ -28,38 +28,23 @@ html, body, #root {
     border: none;
     font-family: 'rust';
     color: $main-font-color;
+    text-decoration: none;
+    
 }
 a {
     text-decoration: none;
+    text-decoration-line: none;
     transition: all .2s ease;
     display: inline-block;
     position: relative;
+    
 
-    &::after {
-        content: '';
-        background: transparent;
-        text-decoration: none;
-        position: absolute;
-        height: 3px;
-        bottom: -3px;
-        left: 0;
-        right: 0;
-        transition: all .2s ease;
-    }
-
-    &:hover {
-        color:#66aebd;
-        text-decoration: none;
-
-        &::after {
-            background: #36b0c9;
-            text-decoration: none;
-        }
-    }
+   
 }
 
 //hover effect 
 @keyframes hovering {
+    
     0% {
         tranform: translateY(0);
     }
@@ -78,12 +63,14 @@ a {
 }
 
 html, body {
-    height: 100%
+    height: 100%;
+    text-decoration: none;
 }
 
 #root {
     background: $main-background-color;
     min-height: 100%;
+    text-decoration: none;
 }
 h1, h2, h3 {
     margin: 0;
@@ -147,6 +134,7 @@ h3{
     margin-left: 220px;
     font-size: 1.75rem;
     flex-grow: 1;
+    text-decoration: none;
     
     @media #{$md} {
         flex-direction: column;
@@ -169,7 +157,33 @@ h3{
         >a {
            margin-right: 200px;
            color: $main-font-color; 
-           text-decoration: none;
+           &::after {
+            content: '';
+            text-decoration: none;
+            text-decoration-line: none;
+            background: transparent;
+            position: absolute;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            transition: all .2s ease;
+            
+        }
+    
+        &:hover {
+            text-decoration-line: none;
+            text-decoration: none;
+            color:#66aebd;
+            list-style:none;
+    
+            &::after {
+                text-decoration-line: none;
+                text-decoration: none;
+                background: #36b0c9;
+            
+            }
+        }
         }
     }
 }
@@ -240,7 +254,7 @@ h3{
 }
 .home {
     &__header{
-        height: 110vh;
+        height: 118vh;
         width:98vw;
         top: 0;
         background: $main-image;
@@ -292,7 +306,7 @@ h3{
 
 .about{
     max-width: 1088px;
-
+    
     &__image{
         margin-top: 100px;
         width: 50%;
@@ -320,13 +334,14 @@ h3{
         }
     }
 
+
 }
 
 .divide_line{
     width: 70%;
     background-color:white;
     height: 3px;
-    margin-top:135px;
+    margin-top:165px;
     @media #{$sm} {
         position: absolute;
         top: 810px;
@@ -335,7 +350,7 @@ h3{
 }
 .about_divide{
     position: absolute;
-    margin-top:835px;
+    margin-top:865px;
     left: 120px;
     font-family: 'rust';
     font-size: 3rem;
@@ -489,9 +504,12 @@ h3{
     flex-wrap: wrap;
     margin-top:50px;
     margin-bottom: 60px;
+    text-decoration: none;
+    text-decoration-line: none;
     
     >a {
         text-decoration: none;
+        text-decoration-line: none;
     }
 
     @media #{$md} {
@@ -526,11 +544,13 @@ h3{
         margin-right: 50px;
         align-self: flex-start;
         text-decoration: none;
+        text-decoration-line: none;
         
         @media #{$md} {
             margin-right: 0;
             margin-bottom: 20px;
             text-decoration: none;
+            text-decoration-line: none;
         }
     }
     &__button {

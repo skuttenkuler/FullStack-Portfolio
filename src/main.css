@@ -13,31 +13,14 @@ body,
   border: none;
   font-family: "rust";
   color: #fff;
+  text-decoration: none;
 }
 a {
   text-decoration: none;
+  text-decoration-line: none;
   transition: all 0.2s ease;
   display: inline-block;
   position: relative;
-}
-a::after {
-  content: "";
-  background: transparent;
-  text-decoration: none;
-  position: absolute;
-  height: 3px;
-  bottom: -3px;
-  left: 0;
-  right: 0;
-  transition: all 0.2s ease;
-}
-a:hover {
-  color: #66aebd;
-  text-decoration: none;
-}
-a:hover::after {
-  background: #36b0c9;
-  text-decoration: none;
 }
 @keyframes hovering {
   0% {
@@ -59,10 +42,12 @@ a:hover::after {
 html,
 body {
   height: 100%;
+  text-decoration: none;
 }
 #root {
   background: #070707;
   min-height: 100%;
+  text-decoration: none;
 }
 h1,
 h2,
@@ -131,6 +116,7 @@ h3 {
   margin-left: 220px;
   font-size: 1.75rem;
   flex-grow: 1;
+  text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
   .main-nav {
@@ -155,7 +141,29 @@ h3 {
 .main-nav--header > a {
   margin-right: 200px;
   color: #fff;
+}
+.main-nav--header > a::after {
+  content: "";
   text-decoration: none;
+  text-decoration-line: none;
+  background: transparent;
+  position: absolute;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease;
+}
+.main-nav--header > a:hover {
+  text-decoration-line: none;
+  text-decoration: none;
+  color: #66aebd;
+  list-style: none;
+}
+.main-nav--header > a:hover::after {
+  text-decoration-line: none;
+  text-decoration: none;
+  background: #36b0c9;
 }
 .resume > a {
   color: #fff;
@@ -214,7 +222,7 @@ h3 {
   }
 }
 .home__header {
-  height: 110vh;
+  height: 118vh;
   width: 98vw;
   top: 0;
   background: #0e1417 url("./assets/img/main.png") 0 top no-repeat;
@@ -300,7 +308,7 @@ h3 {
   width: 70%;
   background-color: white;
   height: 3px;
-  margin-top: 135px;
+  margin-top: 165px;
 }
 @media (max-width: 430px) {
   .divide_line {
@@ -310,7 +318,7 @@ h3 {
 }
 .about_divide {
   position: absolute;
-  margin-top: 835px;
+  margin-top: 865px;
   left: 120px;
   font-family: "rust";
   font-size: 3rem;
@@ -459,9 +467,12 @@ h3 {
   flex-wrap: wrap;
   margin-top: 50px;
   margin-bottom: 60px;
+  text-decoration: none;
+  text-decoration-line: none;
 }
 .project > a {
   text-decoration: none;
+  text-decoration-line: none;
 }
 @media only screen and (max-width: 768px) {
   .project {
@@ -495,12 +506,14 @@ h3 {
   margin-right: 50px;
   align-self: flex-start;
   text-decoration: none;
+  text-decoration-line: none;
 }
 @media only screen and (max-width: 768px) {
   .project__thumbnail {
     margin-right: 0;
     margin-bottom: 20px;
     text-decoration: none;
+    text-decoration-line: none;
   }
 }
 .project__button {
