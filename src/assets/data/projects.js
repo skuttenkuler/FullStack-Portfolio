@@ -41,11 +41,11 @@ export const projects = [
     },
     {
         id: 6,
-        title: 'FitMe',
-        deployed: '//skuttenkuler.github.io/FitME/',
-        code: '//github.com/skuttenkuler/FitME',
-        thumbnail: '/images/FitMe.png',
-        description: " Application that gives users specific workout and nutrition plan based on personal data."
+        title: 'Pupper',
+        deployed: '//salty-harbor-03873.herokuapp.com/',
+        code: '//github.com/skuttenkuler/Pupper',
+        thumbnail: '/images/pupper.png',
+        description: "A React application to find and match with the best good boys and girls."
     },
     {
         id: 7,
@@ -55,4 +55,12 @@ export const projects = [
         thumbnail: '/images/books.png',
         description: "Search for your favorite books using the Google Books API!"
     },
+    {
+        id: 8,
+        title: 'Record Collection',
+        deployed: '//record-store-614c3.web.app/',
+        code: '//github.com/skuttenkuler/Record-Store',
+        thumbnail: '/images/record.png',
+        description: "Ember Application to keep track of all your vinyls!"
+    }
 ]
